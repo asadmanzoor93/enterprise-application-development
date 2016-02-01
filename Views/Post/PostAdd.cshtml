@@ -1,0 +1,146 @@
+﻿@{
+    ViewBag.Title = "PostAdd";
+}
+
+<style>
+    body {
+        background: #75787F url("/assets/images/bg.jpg") no-repeat center center;
+        background-size: cover;
+        height: 600px;
+    }
+</style>
+
+<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+
+        //let's create arrays
+        var catering = [
+            { display: "Complete package", value: "complete packages" },
+            { display: "Halls & Marquees", value: "halls & marquees" },
+            { display: "Food Catering", value: "food catering" },
+            { display: "Decoration", value: "decoration" },
+            { display: "Others", value: "others" }];
+
+        var resturants = [
+            { display: "Fast-food Deals", value: "fast food deals" },
+            { display: "Buffet Party", value: "buffet party" },
+            { display: "Birthday Party", value: "birthday party" },
+            { display: "Others", value: "others" }];
+
+        var beauticians = [
+            { display: "Groom Makeover", value: "groom makeover" },
+            { display: "Bridal Make-up", value: "bridal make-up" },
+            { display: "Party Make-up", value: "party make-up" },
+            { display: "Track Make-up", value: "track make-up" },
+            { display: "Others", value: "others" }];
+
+        var entertainment = [
+           { display: "DJ Sound", value: "dj sound" },
+           { display: "Dhool / Foji Band ", value: "dhool" },
+           { display: "Rent A Car", value: "rent car" },
+           { display: "Invitation Cards", value: "invitation cards" },
+           { display: "Others", value: "others" }];
+
+        //If parent option is changed
+        $("#parent_selection").change(function () {
+            var parent = $(this).val(); //get option value from parent
+            switch (parent) { //using switch compare selected option and populate child
+                case 'catering':
+                    list(catering);
+                    break;
+                case 'resturants':
+                    list(resturants);
+                    break;
+                case 'beauticians':
+                    list(beauticians);
+                    break;
+                case 'entertainment':
+                    list(entertainment);
+                    break;
+                default: //default child option is blank
+                    $("#sub_type").html('');
+                    break;
+            }
+        });
+
+        //function to populate child select box
+        function list(array_list) {
+            $("#sub_type").html(""); //reset child options
+            $(array_list).each(function (i) { //populate child options
+                $("#sub_type").append("<option value=\"" + array_list[i].value + "\">" + array_list[i].display + "</option>");
+            });
+        }
+
+    });
+</script>
+
+@{
+    if ((HttpContext.Current.Session["Company_id"]) == null)
+    {
+        Response.Redirect("~/Account/Login");
+    }
+
+    var items = new List<SelectListItem>{
+        new SelectListItem {Value = "catering", Text = "Catering"},
+        new SelectListItem {Value = "resturant", Text = "Resturant"},
+        new SelectListItem {Value = "beauticians", Text = "Beauticians"},
+        new SelectListItem {Value = "entertainment", Text = "Entertainment"}
+    };
+}
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="well well-sm" style="margin-top:40px">
+                    <form action="/Post/Save" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <fieldset>
+                            <legend class="text-center header" style="color:green">Post an Add</legend>
+                            <div class="form-group">
+                                @*<div class="col-md-10 col-md-offset-1">
+                                        <input id="sub_type" name="sub_type" type="text" placeholder="Sub Type Of Post" class="form-control">
+                                    </div>*@
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <input type="text" id="one_line_description" name="one_line_description" placeholder="One Line Description Of Post" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <textarea class="form-control" id="description" name="description" placeholder="Detail Description Of Post" rows="7"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-5 col-md-offset-1">
+                                    <label><strong>Profile Picture</strong></label><br>
+                                    <input name="image1" type="file" data-overwrite-initial="false">
+                                </div>
+                                <div class="col-md-5 col-md-offset-1">
+                                    <label><strong>Choose Catergory</strong></label><br>
+                                    @*@Html.DropDownList("sub_type", items, new { @class = "special col-md-9" })*@
+                                    <select name="parent_selection" id="parent_selection" class="special col-md-10">
+                                        <option value="">Main Category</option>
+                                        <option value="catering">Catering</option>
+                                        <option value="resturants">Resturant</option>
+                                        <option value="beauticians">Beauticians</option>
+                                        <option value="entertainment">Entertainment</option>
+                                    </select>
+                                    <select name="sub_type" id="sub_type" class="special col-md-10">
+                                        <option value="">Sub Category</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12 text-center col-md-offset-3">
+                                    <input type="submit" class="btn-success" style="width:120px" value="upload" />
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

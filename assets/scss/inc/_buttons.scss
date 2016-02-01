@@ -1,0 +1,20 @@
+.btn-theme{
+	@include btn(#fff, $themeColor);
+}
+.btn-white{
+	@include btn(#fff, transparent);
+	border: 2px solid #fff;
+	border-radius: 0;
+}
+.btn-black{
+	@include btn(#717171, transparent);
+	border: 1px solid #717171;
+	border-radius: 0;
+}
+.btn{
+	border-radius: 0;
+}
+.btn-block{
+	text-transform: uppercase;
+	font-family: $robotobold;
+}

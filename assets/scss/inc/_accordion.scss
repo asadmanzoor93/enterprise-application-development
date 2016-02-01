@@ -1,0 +1,63 @@
+.panel-title {
+  font-size: 18px;
+}
+
+.panel-heading {
+  border: none;
+  padding: 0;
+}
+.panel-heading a {
+  padding: 10px 30px;
+  display: block;
+  border: 1px solid transparent;
+}
+.panel-heading a .toggle-icon {
+  float: right;
+  width: 23px;
+  height: 23px;
+  background: url(../images/plus.png) no-repeat center center;
+}
+.panel-heading a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+.panel {
+  background: #f9f9f9;
+  box-shadow: none;
+  color: #969595;
+  font-size: 14px;
+}
+.panel-group .panel{
+  border-radius: 0;  
+}
+
+.panel-body {
+  padding: 10px 30px;
+}
+
+
+a[aria-expanded="true"] .toggle-icon{
+  background-image: url("../images/minus.png");
+
+}
+
+a[aria-expanded="false"] {
+  color: #969595;
+  font-weight: normal;
+}
+
+a[aria-expanded="true"] {
+  background: #fff;
+  border-bottom: none;
+  color: $themeColor;
+}
+
+.panel-group .panel-heading + .panel-collapse > .list-group, .panel-group .panel-heading + .panel-collapse > .panel-body {
+  border-top: none;
+  background: #fff;
+}
+
+.panel-group .panel + .panel {
+  margin-top: 1px;
+}

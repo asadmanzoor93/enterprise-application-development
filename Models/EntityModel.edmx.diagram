@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e6a9ecc258624bf6b2c030c4ac120af9" Name="Diagram1">
+        <EntityTypeShape EntityType="SystemModel.beautician_post" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemModel.catering_post" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemModel.company" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemModel.entertainment_post" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemModel.registered_company" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemModel.registered_viewer" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemModel.resturant_post" Width="1.5" PointX="3" PointY="18" IsExpanded="true" />
+        <AssociationConnector Association="SystemModel.FK_beautician_post_company" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemModel.FK_catering_post_company" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemModel.FK_entertainment_post_company" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemModel.FK_registered_company_data" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemModel.FK_resturant_post_company" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

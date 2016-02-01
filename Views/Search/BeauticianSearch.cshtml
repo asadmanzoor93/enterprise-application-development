@@ -1,0 +1,159 @@
+﻿@model List<CateringReady.Models.beautician_post>
+@{
+    ViewBag.Title = "BeauticianSearch";
+}
+
+<style>
+    body {
+        background: #75787F url("/assets/images/bg.jpg") repeat center;
+        background-size: cover;
+        height: 500px;
+    }
+</style>
+
+
+
+<body>
+    <section class="page-content-area search-result-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-2">
+                    <div class="filter-sidebar">
+                        <h3><span class="fa fa-sliders"></span> Categories </h3>
+                        <a class="collapse-link" role="button" data-toggle="collapse" href="#field-collapse" aria-expanded="false">Catering <span class="fa fa-caret-down"></span></a>
+                        <div class="collapse in collaped-area" id="field-collapse">
+                            <ul class="list-unstyled">
+                                <li><label><input type="checkbox" name="" id=""><span class="virtual-checkbox"></span> Complete package </label></li>
+                                <li><label><input type="checkbox" name="" id=""><span class="virtual-checkbox"></span> Hall/Marque</label></li>
+                                <li><label><input type="checkbox" name="" id=""><span class="virtual-checkbox"></span> Décor </label></li>
+                                <li><label><input type="checkbox" name="" id=""><span class="virtual-checkbox"></span> Food </label></li>
+                                <li><label><input type="checkbox" name="" id=""><span class="virtual-checkbox"></span> Other </label></li>
+                            </ul>
+                        </div>
+                        <a class="collapse-link" role="button" data-toggle="collapse" href="#career-collapse" aria-expanded="false">Restaurants <span class="fa fa-caret-down"></span></a>
+                        <div class="collapse collaped-area" id="career-collapse">
+                            <ul class="list-unstyled">
+                                <li><label><input type="checkbox" name="" id=""><span class="virtual-checkbox"></span> Traditional </label></li>
+                                <li><label><input type="checkbox" name="" id=""><span class="virtual-checkbox"></span> Chinease </label></li>
+                                <li><label><input type="checkbox" name="" id=""><span class="virtual-checkbox"></span> Fast food </label></li>
+                                <li><label><input type="checkbox" name="" id=""><span class="virtual-checkbox"></span> Others </label></li>
+                            </ul>
+                        </div>
+                        <a class="collapse-link" role="button" data-toggle="collapse" href="#career-collapse1" aria-expanded="true">Beauticians<span class="fa fa-caret-down"></span></a>
+                        <div class="collapse collaped-area" id="career-collapse1">
+                            <ul class="list-unstyled">
+                                <li><label><input type="checkbox" name="" id=""><span class="virtual-checkbox"></span> Party </label></li>
+                                <li><label><input type="checkbox" name="" id=""><span class="virtual-checkbox"></span> Weding </label></li>
+                                <li><label><input type="checkbox" name="" id=""><span class="virtual-checkbox"></span> Routine </label></li>
+                                <li><label><input type="checkbox" name="" id=""><span class="virtual-checkbox"></span> Others </label></li>
+                            </ul>
+                        </div>
+                        <a class="collapse-link" role="button" data-toggle="collapse" href="#career-collapse2" aria-expanded="false">Entertainment<span class="fa fa-caret-down"></span></a>
+                        <div class="collapse collaped-area" id="career-collapse2">
+                            <ul class="list-unstyled">
+                                <li><label><input type="checkbox" name="" id=""><span class="virtual-checkbox"></span>Photography/Video</label></li>
+                                <li><label><input type="checkbox" name="" id=""><span class="virtual-checkbox"></span>DJ</label></li>
+                                <li><label><input type="checkbox" name="" id=""><span class="virtual-checkbox"></span>Others</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-9 col-md-10">
+                    <ul class="list-results">
+                        @foreach (var item in Model)
+                        {
+                            <li>
+                                <div class="col-sm-6 col-md-6">
+                                    @*<img src="~/assets/images/slider2.jpg" style="height:200px;width:450px" alt="">*@
+                                    <img src="/assets/images/PostsPictures/@item.image1" style="height:200px;width:450px" alt="">
+                                </div>
+                                <div class="col-sm-3 col-md-4 well">
+                                    <h3><a name="company_name" href="/Search/MoreDetails" style="color:brown"><strong> @item.company.name</strong></a></h3>
+                                    @*<p  class="justline-2">we deal in huma makeup and this is my oneline desciption </p>*@
+                                    <p>@item.one_line_description</p>
+                                    <div>
+                                        <div class="col-md-6">
+                                            <p>@item.company.office_location</p>
+                                            <p>@item.company.phone1</p>
+                                            <p>@item.company.phone2</p>
+                                        </div>
+                                        <form method="post" action="/Post/PostDetails">
+                                            <div class="col-md-4">
+                                                <p>@item.company.email</p>
+                                                <p></p>
+                                                <p><input value="More Details" type="submit" class="bottom-right btn-success" /></p>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section><!-- page-content-area -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <script>window.jQuery || document.write('<script src="~/assets/js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/plugins.js"></script>
+    <!-- for mesonery -->
+    <script src="~/assets/plugins/isotope.pkgd.min.js"></script>
+    <!-- for fancybox -->
+
+    <script type="text/javascript" src="~/assets/plugins/jquery.fancybox.pack.js"></script>
+    <!-- end for fancy box -->
+    <script src="~/assets/js/main.js"></script>
+
+    <script type="text/javascript">
+        $(window).load(function (argument) {
+            var $container = $('.items_container');
+            var $width = $('.items_container > li');
+            $container.isotope({
+                //itemSelector: $width,
+                layoutMode: 'fitRows',
+            })
+            $('.filter-list').on('click', 'a', function () {
+                if ($(this).parent().hasClass('active')) {
+                }
+                else {
+                    $(this).parent().parent().children().removeClass('active');
+                    $(this).parent().addClass('active');
+                }
+                var filterValue = $(this).attr('data-filter');
+                $container.isotope({ filter: filterValue });
+                return false;
+            });
+            $(".fancybox").fancybox();
+        })
+
+        $(document).ready(function () {
+            $(".checkedItem").each(function () {
+                if ($(this).is(":checked")) {
+                    var empCode = $('#hdnEmp').val();
+                    var chckid = $(this).val();
+                    var $row = $(this).closest("tr");
+
+                    $.get('/Employee/GetSalary',
+                        {
+                            empCode: empCode, ID: chckid
+                        },
+
+                        function (data, status) {
+                            $row.find('.textfield2').val(data.Monthly);
+                            $row.find('.textfield3').val(data.Annualy);
+                        });
+
+                }
+
+            });
+        });
+
+    </script>
+</body>
+
+
+
+
+

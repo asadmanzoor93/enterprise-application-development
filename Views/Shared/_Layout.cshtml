@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    @*<link rel="catlogo" href="catlogo.png">*@
+    <!-- Place favicon.ico in the root directory -->
+    @*<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>*@
+
+    @*<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/css/style.css" rel="stylesheet" />
+    <link href="~/assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/assets/fonts/stylesheet.css" rel="stylesheet" />
+    @*<script src="~/assets/js/min/main.min.js"></script>*@
+    <link href="~/Scripts/jquery-ui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-2.2.0.js"></script>
+    <script src="~/Scripts/jquery-ui-1.11.4.js"></script>
+    <script src="~/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    @*<script src="~/assets/js/main.js"></script>
+      <script src="~/assets/js/plugins.js"></script>*@
+
+    @*<script>
+            $(function () {
+                if (Session["Company_id"].ToStrong() != null)
+                {
+                    $("ul li:has('a'):contains('Signup')").hide();
+                }
+            });
+        </script>*@
+    <script>
+        $(function ()
+        {
+            if ((Session["Company_id"].ToString() == "Default")) {
+                $("ul li:has('a'):contains('Logout')").hide();
+            }
+            else if (((int)(Session["Company_id"])) > 0)
+            {
+                $("ul li:has('a'):contains('Signup')").hide();
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="col-md-6">
+                    <a class="navbar-logo" href="/Home/Index" title="#"><img src="~/assets/images/logo.png" style="height:75px;width:75px" border="0" alt=""></a>
+                    <a href="/Home/Index" title="#"><img src="~/assets/images/CateringReady.png" style="height:75px;width:400px" border="0" alt="" /></a>
+                </div>
+                <div class="col-md-6">
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right padding_top_10">
+                            <li><a href="/Home/Index" id="home" title="" style="color:white;">Home</a></li>
+                            <li><a href="/Home/About" id="About" title="" style="color:white;">About</a></li>
+                            <li><a href="/Home/Contact" id="Contact" title="" style="color:white;">Contact</a></li>
+                            @*<li><a href="/Account/Login" id="Signup" title="" style="color:white;">Login/SignUp</a></li>*@
+                            @{                            
+                                if ((Session["Company_id"] == null) || ((Session["Company_id"]).Equals("default")))
+                                {
+                                    <li>  <a href="/Account/Login" id="Signup" style="color:white;">Login/SignUp</a> </li>
+                                }
+                                else if (!((Session["Company_id"] == null) || ((Session["Company_id"]).Equals("default"))))
+                                {
+                                    <li id="Logout">
+                                        <a href="/Account/Logout" id="Logout" style="color:white;">Logout</a>
+                                    </li>
+                                }
+                             }
+                            <li><a href="/Post/PostAdd" id="Post_Add" title="" style="color:yellow;"><b>Post An Add</b></a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div>
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+
+    @RenderBody()
+
+    @*<hr />*@
+
+    <div class="body-content" style="padding-top:12em">
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12">
+                        <div class="col-md-3">
+                            <h2><a href="/Home/Index" title=""><img src="~/assets/images/logo.png" style="height:170px;width:150px" border="0" alt=""></a></h2>
+                        </div>
+                        <div class="col-md-5">
+                            <p>
+                                This portal is for all Catering related things like event planner, entertainers, Food caterers, and much more.
+                                It facilitates a common man to organize event, he can get best deals for food, catering's, halls & marquees, beauticians at his maximum satisfaction level at his desired location.<br>
+                                Our portal facilitates common public as well as Lahore based companies involved in business of event management.
+                            </p>
+                            @*<p class="social-icons">
+                                    <a href="#"><span class="fa fa-facebook"></span></a><a href="#"><span class="fa fa-twitter"></span></a><a href="#"><span class="fa fa-linkedin"></span></a><a href="#"><span class="fa fa-google-plus"></span></a><a href="#"><span class="fa fa-youtube"></span></a><a href="#"><span class="fa fa-instagram"></span></a>
+                                </p>*@
+                        </div>
+                        <div class="col-md-4">
+                            <h2>Contact info</h2>
+                            <ul class="related-icons-list">
+                                <li><span class="glyphicon glyphicon-home"></span>  Quaid-e-Azam Campus <br>  PUCIT Lahore</li>
+                                <li><span class="glyphicon glyphicon-phone"></span>  Phone: 03049529980 </li>
+                                <li><span class="glyphicon glyphicon-envelope"></span> <a href="mailto:asadmanzoor93@hotmail.com" title=""> asadmanzoor93@hotmail.com</a></li>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>&copy; @DateTime.Now.Year - Catering Ready ©</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- container -->
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "PostRemove";
+}
+
+<!-- page content -->
+<section class="page-content-area search-result-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 col-md-2">
+                <h3><a href="/Admin/Home" style="border: 3px; border-style: solid; border-color:red;color:red">Admin Home Page</a></h3>
+            </div>
+            <div class="col-sm-9 col-md-10">
+                <div class="col-sm-9 col-md-10">
+                    <h1 style="padding-left:10em;color:black">Search By Company Name</h1>
+                    <form action="/Admin/CompanyDetails" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <fieldset>
+                            <div class="form-group">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <input name="company_name" type="text" placeholder="Company Name" class="form-control">
+                                </div>
+                                <div class="col-md-10  col-md-offset-1 text-right">
+                                    <input type="submit" style="width:70px;height:36px" value="Search" />
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- page-content-area -->

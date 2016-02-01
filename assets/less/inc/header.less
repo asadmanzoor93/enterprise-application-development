@@ -1,0 +1,100 @@
+/* ==========================================================================
+   								Header Area
+   ========================================================================== */
+
+.top-bar{
+	border-bottom: 1px solid @borderColor;
+	font-size: 12px;
+	.nav > li > a{
+		color: @grey;
+	}
+	.nav > li{
+		border-left: 1px solid @borderColor;
+		&:last-child{
+			border-right: 1px solid @borderColor;
+		}
+	}
+	.navbar{
+		margin-bottom: 0;
+	}
+	.navbar-collapse{
+		padding-left: 0;
+	}
+}
+
+
+.header-bar{
+	padding: 23px 0;
+	.navbar-logo{
+		display: inline-block;
+		padding-top: 5px;
+	}
+	.nav > li > a{
+		color: @greydark;
+	}
+	.nav{
+		> li > a{
+			.fa-search{
+				color: @greylight;
+			}
+		}
+	}
+	.navbar{
+		margin-bottom: 0;
+	}
+
+}
+.search-dropdown{
+	padding: 10px;
+	min-width: 250px;
+}
+
+
+/* default setting of bootstrap-navigation */
+.navbar-nav{
+	> li{
+		> a{
+			&:hover,&:focus{
+				background: none;
+			}
+			&:hover{
+				color: @themeColor;
+			}
+		}
+		&.open.dropdown > a,
+		&.active > a{
+			color: @themeColor;
+			background: none;
+		}
+	}
+}
+.navbar-nav > .social-icons{
+	padding: 0 10px;
+}
+.navbar-nav > .social-icons > a{
+	display: inline-block;	
+	padding-left: 5px;
+	padding-right: 5px;
+	margin:0;
+}
+
+
+
+/* responsive header */
+@media (max-width: 767px){
+	.top-bar{
+		display:none;
+	}
+	.header-bar{
+		padding: 10px 15px;
+	}
+	.navbar-toggle{
+		background: #fcfcfc;
+		&:hover{
+			background: #fafafa;
+		}
+		.icon-bar{
+			background: @themeColor;
+		}
+	}
+}

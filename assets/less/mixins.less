@@ -1,0 +1,29 @@
+// mixins
+
+
+// buttons
+.btn(@color, @background){
+	color : @color;
+	background: @background;
+	&:hover,&:focus{
+		outline: none;
+		color: @color;
+	}
+	&:hover{
+		background: darken(@background, 5%);
+	}
+	&.disabled{
+		opacity: 0.7;
+	}
+}
+// clearfix
+.clear(){
+	content: '';
+	display: block;
+	clear: both;
+}
+.clearfix() {
+	&:after, &:before{
+		.clear();
+	}
+}

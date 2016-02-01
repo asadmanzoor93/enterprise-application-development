@@ -1,0 +1,93 @@
+.post-comments-section{
+	font-size: 13px;
+	max-width: 735px;
+	color: #747474;
+	a{color: inherit; &:hover{color: $themeColor;}}
+	small{
+		font-size: 12px;
+	}
+	strong{
+		color: #333;
+		font-weight: normal;
+		font-family: $roboto;
+	}
+	h3{
+		font-family: $roboto;
+	}
+	p{
+		margin-bottom: 10px;
+	}
+	.comment{
+		@include clearfix;
+	}
+	.comment-user-img{
+		float: left;
+		width: $comment-thumb-width;
+		img{
+			border-radius: 50%;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+	.comment-user-img ~  .comment-user-desc,
+	.comment-user-img ~  .comment{
+		margin-left: $comment-thumb-width + 20px;		
+	}
+	.comment-user-desc{
+		border-bottom: 1px solid $borderColor;
+		margin-bottom: 35px;
+		padding-bottom: 20px;
+
+		&:after{
+			@include clear;
+		}
+	}
+	.btn{
+		float: right;
+		min-width: 72px;
+		color: #fff;
+		border-radius: 0;
+		font-size: 10px;
+		padding: 4px 12px 5px;
+		&:hover{
+			color: #fff;
+		}
+	}
+}
+.post-comment-form{
+	.form-control{
+		font-size: 13px;
+		font-family: $roboto;
+		padding: 15px 20px;
+	}
+	.form-group{
+		margin-bottom: 30px;
+	}
+	.btn{
+		font-size: 13px;
+		padding: 15px 20px;
+	}
+}
+
+
+/* responsive comments */
+@media (max-width: 767px){
+	.post-comments-section {
+		.comment-user-img{
+			width: 50px;
+		}
+		.comment-user-img ~ .comment-user-desc,
+		.comment-user-img ~ .comment{
+			margin-left: 70px;
+		}
+	}
+	.post-comment-form{
+		margin-bottom: 15px;
+		.form-control{
+			margin-bottom: 15px;
+		}
+		.form-group{
+			margin-bottom: 0;
+		}
+	}
+}

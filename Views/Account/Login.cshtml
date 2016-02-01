@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<style>
+    body {
+        background: #75787F url("/assets/images/main2.jpg") no-repeat content-box;
+        background-size: cover;
+        height: 700px;
+    }
+
+    .nav-pills {
+        color: white;
+        background-color: grey;
+    }
+</style>
+<script>
+    $(function () {
+        $('#Signup').hide();
+    })
+</script>
+<body>
+    <div class="login-bg">
+        <div class="form-template">
+
+
+            @using (Html.BeginForm("signIn", "Account", null, FormMethod.Post, new { @class = "form login-form" }))
+            {
+                <div class="form-group">
+                    @Html.TextBox("email", "", new { @class = "form-control", placeholder = "Enter Email" })
+                </div>
+                <div class="form-group">
+                    @Html.ActionLink("Forgot Password?", "Register", "Account", new { @class = "pull-right" })
+                    @Html.Password("Password", "", new { @class = "form-control", placeholder = "Enter Password" })
+                </div>
+                <div class="form-group">
+                    <input type="radio" id="ViewerRadio" name="Radioname" value="Viewer" checked><strong class="equal-label" style="color:yellowgreen"> Viewer   </strong>
+                    <input type="radio" id="CompanyRadio" value="Company" name="Radioname"> <strong class="equal-label" style="color:yellowgreen"> Company</strong>
+                </div>
+                <div class="clearfix">
+                    <strong class="equal-label">@Html.ActionLink("Create New Account", "Register", "Account", new { @class = "pull-right" })</strong>
+                    <input type="submit" value="Login" class="btn btn-lg btn-success ">
+                </div>
+            }
+
+        </div>
+    </div>
+</body>

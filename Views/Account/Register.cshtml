@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Register";
+}
+
+<style>
+    body {
+        background: #75787F url("/assets/images/register.jpg") no-repeat content-box;
+        background-size: cover;
+        height: 1000px;
+    }
+
+    .nav-pills {
+        color: white;
+        background-color: grey;
+    }
+</style>
+@{
+    var items = new List<SelectListItem>{
+                            new SelectListItem {Value = "catering", Text = "Catering"},
+                            new SelectListItem {Value = "resturant", Text = "Resturant"},
+                            new SelectListItem {Value = "beauticians", Text = "Beauticians"},
+                            new SelectListItem {Value = "entertainment", Text = "Entertainment"}
+                        };
+}
+<div class="form-template" style="margin-top:50px">
+    <ul class="nav nav-pills" style="color:grey">
+        <li class="active"><a data-toggle="tab" href="#sectionCompany" style="color:white">Company</a></li>
+        <li><a data-toggle="tab" href="#sectionViewer" style="color:white">Viewer</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="sectionCompany" class="tab-pane fade in active">
+            @using (Html.BeginForm("RegisterCompany", "Account", null, FormMethod.Post, new { @class = "form login-form" }))
+            {
+                @Html.TextBox("name", "", new { @class = "input-has-icon left-icon form-control", placeholder = "Company Name" })
+                @Html.TextBox("email", "", new { @class = "input-has-icon left-icon form-control", placeholder = "Email Address" })
+                @Html.Password("password", "", new { @class = "input-has-icon left-icon form-control", placeholder = "Password" })
+                @Html.Password("confirm_password", "", new { @class = "input-has-icon left-icon form-control", placeholder = "Confirm Password" })
+                @Html.DropDownList("main_type", items, "Select Category", new { @class = "input-has-icon left-icon form-control" })
+                @Html.TextBox("office_location", "", new { @class = "input-has-icon left-icon form-control", placeholder = "Office Location" })
+                @Html.TextBox("phone1", "", new { @class = "input-has-icon left-icon form-control", placeholder = "Contact Number#1" })
+                @Html.TextBox("phone2", "", new { @class = "input-has-icon left-icon form-control", placeholder = "Contact Number#2" })
+                <p><label><input type="checkbox"> I agree with the terms &amp; conditions</label></p>
+                <input type="submit" value="Create an Account" class="btn btn-lg btn-success btn-block" style="color:white">
+            }
+        </div>
+        <div id="sectionViewer" class="tab-pane fade">
+            @using (Html.BeginForm("RegisterViewer", "Account", null, FormMethod.Post, new { @class = "form login-form" }))
+            {
+                @Html.TextBox("name", "", new { @class = "input-has-icon left-icon form-control", placeholder = "Your Name" })
+                @Html.TextBox("email", "", new { @class = "input-has-icon left-icon form-control", placeholder = "Email Address" })
+                @Html.Password("password", "", new { @class = "input-has-icon left-icon form-control", placeholder = "Password" })
+                @Html.Password("confirm_password", "", new { @class = "input-has-icon left-icon form-control", placeholder = "Confirm Password" })
+                <p><label><input type="checkbox"> I agree with the terms &amp; conditions</label></p>
+                <input type="submit" value="Create an Account" class="btn btn-lg btn-success btn-block" style="color:white">
+            }
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,17 @@
+.social-secions{
+	a{
+		display: inline-block;
+		width: 2.4em;
+		height: 2.4em;
+		line-height: 2.4em;
+		font-size: 16px;
+		margin-left: 10px;
+		text-align: center;
+		border-radius: 50%;
+		background: $themeColor;
+		color: #fff;
+		&:hover{
+			background: darken($themeColor, 5%);
+		}
+	}
+}

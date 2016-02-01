@@ -1,0 +1,92 @@
+﻿@model List<CateringReady.Models.company>
+@{
+    ViewBag.Title = "BlockedCompanies";
+}
+
+<section class="page-content-area search-result-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 col-md-3">
+                <h3><a href="/Admin/Home" style="border: 3px; border-style: solid; border-color:red;color:red">Admin Home Page</a></h3>
+            </div>
+            <div class="col-sm-9 col-md-10">
+                <h1 style="padding-left:20em">Blocked Companies</h1>
+            </div>
+            <ul class="list-results">
+                  @foreach (var item in Model)
+                  {
+                    <li>
+                        <div class="col-sm-3 col-md-3"></div>
+                        <div class="col-sm-9 col-md-9">
+                            <div class="col-md-12">
+                                <div class="well" style="margin-top: 50px;margin-bottom: 5px;margin-right: 5px;margin-left: 5px;">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            @*<img src="~/assets/images/Mcdonalds.png" alt="Smiley face" height="100" width="125">*@
+                                        </div>
+                                        <div class="col-md-9">
+                                            <p style="margin:0px 0px 0px 5px " align="left"><font size="6" color="black">@item.name<p>
+                                                @*<img src="~/assets/images/stars.png">*@
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <p style="margin:0px 0px 0px 5px " align="left"><font size="4" color="black">@item.office_location<p>
+                                        </div>
+                                        @*<div class="col-md-9">
+                                            <p style="margin:0px 0px 0px 5px " align="left"><font size="3" color="black">New Garden Town Lahore.<p>
+                                        </div>*@
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <p style="margin:0px 0px 0px 5px " align="left"><font size="4" color="black">Contatct 1:<p>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <p style="margin:0px 0px 0px 5px " align="left"><font size="3" color="black">@item.phone1<p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <p style="margin:0px 0px 0px 5px " align="left"><font size="4" color="black">Contatct 2:<p>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <p style="margin:0px 0px 0px 5px " align="left"><font size="3" color="black">@item.phone2<p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <p style="margin:0px 0px 0px 5px " align="left"><font size="4" color="black">Email:<p>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <p style="margin:0px 0px 0px 5px " align="left"><font size="3" color="black">@item.email<p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p style="margin:0px 0px 0px 5px " align="left"><font size="4" color="black">Password:<p>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <p style="margin:0px 0px 0px 5px " align="left"><font size="3" color="black">@item.password<p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p style="margin:0px 0px 0px 5px " align="left"><font size="4" color="black">Main Type :<p>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <p style="margin:0px 0px 0px 5px " align="left"><font size="3" color="black">@item.main_type<p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input value="UnBlock" style="color:red" type="button" />
+                                        <input value="Email  " style="color:red" type="button" />
+                                        <input value="Remove " style="color:red" type="button" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                  }
+            </ul>
+        </div>
+    </div>
+</section><!-- page-content-area -->

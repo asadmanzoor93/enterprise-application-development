@@ -1,0 +1,352 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    .search-class {
+        background: #75787F url("/assets/images/bg.jpg") no-repeat center center;
+        background-size: cover;
+        height: 600px;
+    }
+</style>
+
+<body>
+    <div class="page-section search-class">
+        <div id="searchbox" class="search-classified-bg">
+            <div class="row">
+                <div class="section-header">
+                </div>
+                <div class="col-lg-3 col-sm-4"></div>
+                <div id="Content" class="well col-lg-6 col-sm-8">
+
+                    <ul class="nav nav-pills">
+                        <li class="active"><a data-toggle="tab" href="#home">Catering</a></li>
+                        <li><a data-toggle="tab" href="#menu1">Restaurants</a></li>
+                        <li><a data-toggle="tab" href="#menu2">Beautician</a></li>
+                        <li><a data-toggle="tab" href="#menu3">Entertainment</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div id="home" class="tab-pane fade in active">
+                            <form action="/Search/SearchResults" method="post" name="catering_search">
+                                <div class="col-md-6">
+                                    <br>
+                                    <h5>Select City <span class="label label-default">New</span></h5>
+                                    <select class="form-control">
+                                        <option value="lahore">Lahore</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <br>
+                                    <h5>Select Location <span class="label label-default"></span></h5>
+                                    <select name="location" class="form-control">
+                                        <option value="lahore">All</option>
+                                        <option value="dha">DHA</option>
+                                        <option value="bahria town">Bahria Town</option>
+                                        <option value="model town">Model Town</option>
+                                        <option value="township">Township</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <br>
+                                    <h5>Enter Brand/Company Name <span class="label label-default"></span></h5>
+                                    <fieldset class="form-group">
+                                        <input type="text" class="form-control" name="name" id="CBrandName" placeholder="Enter Brand/Company Name">
+                                        <small class="text-muted"></small>
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-6">
+                                    <br>
+                                    <h5>Select Sub-Type <span class="label label-default"></span></h5>
+                                    <select name="sub_type" class="form-control">
+                                        <option value="catering">All</option>
+                                        <option value="complete packages">Complete Packages</option>
+                                        <option value="halls & marquees">Halls & Marquees</option>
+                                        <option value="food catering">Food Catering</option>
+                                        <option value="decoration">Decoration</option>
+                                        <option value="others">Others</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-8"></div>
+                                <div class="col-md-4">
+                                    <br>
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block">Search</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div id="menu1" class="tab-pane fade">
+                            <form action="/Search/RestaurantSearch" method="post" name="restaurant_search">
+                                <div class="col-md-6">
+                                    <br>
+                                    <h5>Select City <span class="label label-default">New</span></h5>
+                                    <select class="form-control">
+                                        <option value="lahore">Lahore</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <br>
+                                    <h5>Select Location <span class="label label-default"></span></h5>
+                                    <select name="location" class="form-control">
+                                        <option value="lahore">All</option>
+                                        <option value="dha">DHA</option>
+                                        <option value="bahria town">Bahria Town</option>
+                                        <option value="model town">Model Town</option>
+                                        <option value="township">Township</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <br>
+                                    <h5> Enter Brand/Company Name<span class="label label-default"></span></h5>
+                                    <fieldset class="form-group">
+                                        <input type="text" class="form-control" name="name" id="RBrandName" placeholder="Enter Brand/Company Name">
+                                        <small class="text-muted"></small>
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-6">
+                                    <br>
+                                    <h5>Select Sub-Type <span class="label label-default"></span></h5>
+                                    <select name="sub_type" class="form-control">
+                                        <option value="restaurants">All</option>
+                                        <option value="fast food deals">Fast-food Deals </option>
+                                        <option value="buffet party">Buffet Party</option>
+                                        <option value="birthday party">Birthday Party</option>
+                                        <option value="others">Others</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-8"></div>
+                                <div class="col-md-4">
+                                    <br>
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block">Search</button>
+                                </div>
+                            </form>
+                        </div>
+
+
+                        <div id="menu2" class="tab-pane fade">
+                            <form action="/Search/BeauticianSearch" method="post" name="beautician_search">
+                                <div class="col-md-6">
+                                    <br>
+                                    <h5>Select City <span class="label label-default">New</span></h5>
+                                    <select class="form-control">
+                                        <option value="lahore">Lahore</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <br>
+                                    <h5>Select Location <span class="label label-default"></span></h5>
+                                    <select name="location" class="form-control">
+                                        <option value="lahore">All</option>
+                                        <option value="dha">DHA</option>
+                                        <option value="bahria town">Bahria Town</option>
+                                        <option value="model town">Model Town</option>
+                                        <option value="township">Township</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <br>
+                                    <h5> Enter Brand/Company Name<span class="label label-default"></span></h5>
+                                    <fieldset class="form-group">
+                                        <input type="text" class="form-control" name="name" id="BBrandName" placeholder="Enter Brand/Company Name">
+                                        <small class="text-muted"></small>
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-6">
+                                    <br>
+                                    <h5>Select Sub-Type <span class="label label-default"></span></h5>
+                                    <select name="sub_type" class="form-control">
+                                        <option value="beautician">All</option>
+                                        <option value="groom makeover">Groom Makeover</option>
+                                        <option value="bridal make-up">Bridal Make-up</option>
+                                        <option value="party make-up">Party Make-up</option>
+                                        <option value="track make-up">Track Make-up</option>
+                                        <option value="others">Others</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-8"></div>
+                                <div class="col-md-4">
+                                    <br>
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block">Search</button>
+                                </div>
+                            </form>
+                        </div>
+
+
+                        <div id="menu3" class="tab-pane fade">
+                            <form action="/Search/EntertainmentSearch" method="post" name="entertainment_search">
+                                <div class="col-md-6">
+                                    <br>
+                                    <h5>Select City <span class="label label-default">New</span></h5>
+                                    <select class="form-control">
+                                        <option value="lahore">Lahore</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <br>
+                                    <h5>Select Location <span class="label label-default"></span></h5>
+                                    <select name="location" class="form-control">
+                                        <option value="lahore">All</option>
+                                        <option value="dha">DHA</option>
+                                        <option value="bahria town">Bahria Town</option>
+                                        <option value="model town">Model Town</option>
+                                        <option value="township">Township</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <br>
+                                    <h5> Enter Brand/Company Name<span class="label label-default"></span></h5>
+                                    <fieldset class="form-group">
+                                        <input type="text" class="form-control" name="name" id="EBrandName" placeholder="Enter Brand/Company Name">
+                                        <small class="text-muted"></small>
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-6">
+                                    <br>
+                                    <h5>Select Sub-Type <span class="label label-default"></span></h5>
+                                    <select name="sub_type" class="form-control">
+                                        <option value="entertainment">All</option>
+                                        <option value="video & photography">Video & Photography</option>
+                                        <option value="dj sound">DJ Sound</option>
+                                        <option value="dhool">Dhool / Foji Band </option>
+                                        <option value="rent car">Rent A Car</option>
+                                        <option value="invitation cards">Invitation Cards</option>
+                                        <option value="others">Others</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-8"></div>
+                                <div class="col-md-4">
+                                    <br>
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block">Search</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="page-section">
+                <div class="col-sm-3">
+                    <h4 class="with-icon" style="color:brown"><span class="glyphicon glyphicon-home"></span><b>  Catering</b></h4>
+                    <p>Latest deals provided my the caterers in the town</p>
+                </div>
+                <div class="col-sm-3">
+                    <h4 class="with-icon" style="color:green"><span class="glyphicon glyphicon-tower"></span><b>  Restaurants</b></h4>
+                    <p>Latest deals provided my the restaurants for small level parties and events in the town</p>
+                </div>
+                <div class="col-sm-3">
+                    <h4 class="with-icon" style="color: darkorange"><span class="glyphicon glyphicon-gift"></span><b>  Beauticians</b></h4>
+                    <p>Latest make over deals provided my the beauticians in the town</p>
+                </div>
+                <div class="col-sm-3">
+                    <h4 class="with-icon" style="color:orangered"><span class="glyphicon glyphicon-music"></span><b>  Entertainment</b></h4>
+                    <p>Entertainers available in the town</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="page-section">
+            <h2 class="with-borderline"><span>Our News</span></h2>
+            <div class="row with-borderline">
+                <div class="col-sm-3">
+                    <div class="news-post">
+                        <div class="post-thumbnail">
+                            <img src="~/assets/images/QYT Events.jpg" alt="">
+                        </div>
+                        <div class="post-caption">
+                            <h3><a href="#" title="">QYT Events </a></h3>
+                            <p>Address: Lahore Pakistan<br>Contact: +92 300 9460190<br>Website: www.asimyar.com</p>
+                        </div>
+                    </div><!-- /.news-post -->
+                </div>
+                <div class="col-sm-3">
+                    <div class="news-post">
+                        <div class="post-thumbnail">
+                            <img src="~/assets/images/Lebanese Lounge.jpg" alt="">
+                        </div>
+                        <div class="post-caption">
+                            <h3><a href="#" title="">Lebanese Lounge </a></h3>
+                            <p>Address: Haali Road, Main Boulevard, Gulberg Lahore, Pakistan<br>Contact: (042) 111 354 354</p>
+                        </div>
+                    </div><!-- /.news-post -->
+                </div>
+                <div class="col-sm-3">
+                    <div class="news-post">
+                        <div class="post-thumbnail">
+                            <img src="~/assets/images/Tasneem's Make-up Studio and Salon.jpg" alt="">
+                        </div>
+                        <div class="post-caption">
+                            <h3><a href="#" title="">Tasneem's Make-up Studio and Salon</a></h3>
+                            <p>Address: Phase III,DHA,LHR<br>Contact: +92 321 4698021</p>
+                        </div>
+                    </div><!-- /.news-post -->
+                </div>
+                <div class="col-sm-3">
+                    <div class="news-post">
+                        <div class="post-thumbnail">
+                            <img src="~/assets/images/Da Artist.jpg" alt="">
+                        </div>
+                        <div class="post-caption">
+                            <h3><a href="#" title="">Da Artist</a></h3>
+                            <p>Address: Johar Town Lahore<br>Contact: +92 345 6749600<br>Website: http://www.daartist.com/</p>
+                        </div>
+                    </div><!-- /.news-post -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script>
+
+
+    var items = [];
+    jQuery.getJSON("/Search/getRegisteredCateringCompaniesName", function (successResult) {
+        $.each(successResult, function (key, val) {
+            items.push(val);
+        });
+    });
+    $("#CBrandName").autocomplete({
+        source: items
+    });
+
+    var items2 = [];
+    jQuery.getJSON("/Search/getRegisteredRestaurentsCompaniesName", function (successResult) {
+        $.each(successResult, function (key, val) {
+            items2.push(val);
+        });
+    });
+    $("#RBrandName").autocomplete({
+        source: items2
+    });
+
+    var items3 = [];
+    jQuery.getJSON("/Search/getRegisteredBeauticianCompaniesName", function (successResult) {
+        $.each(successResult, function (key, val) {
+            items3.push(val);
+        });
+    });
+    $("#BBrandName").autocomplete({
+        source: items3
+    });
+
+    var items4 = [];
+    jQuery.getJSON("/Search/getRegisteredEntertainmentCompaniesName", function (successResult) {
+        $.each(successResult, function (key, val) {
+            item4.push(val);
+        });
+    });
+    $("#EBrandName").autocomplete({
+        source: items4
+    });
+
+</script>

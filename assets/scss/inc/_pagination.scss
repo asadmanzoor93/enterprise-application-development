@@ -1,0 +1,18 @@
+.pagination{
+	> li{
+		display: inline-block;
+		margin: 0 5px;
+		> a, >span{
+			float: none;
+			border-radius: 0 !important;
+			border-color: #dadada;
+			border-width: 2px;
+			color: #dadada;
+		}
+		> a:hover,>a:focus,> span:hover,>span:focus,&.active > a,&.active > span,&.active > a:hover,&.active > span:hover,&.active > a:focus,&.active > span:focus{
+			background: $themeColor;
+			color: #fff;
+			border-color: transparent;
+		}
+	}
+}

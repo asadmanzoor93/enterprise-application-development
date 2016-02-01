@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "SearchPosts";
+}
+
+<section>
+    <br />
+    <br />
+    <div class="container">
+        <div class="col-sm-2 col-md-2">
+            <h3><a href="/Admin/Home" style="border: 3px; border-style: solid; border-color:red;color:red">Admin Home Page</a></h3>
+        </div>
+        <div class="col-md-5 well">
+
+            <h2>Seach By Company/Post ID</h2>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="post_id" class="col-sm-2 control-label">Post_Id</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="post_id" placeholder="Post ID">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="company_id" class="col-sm-2 control-label">Company Id</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="Company_id" placeholder="Company_id">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-1">
+
+        </div>
+        <div class="col-md-4 well">
+            <h2>Seach By Date</h2>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="post_id" class="col-sm-2 control-label">From Date</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" id="From_Date" placeholder="From Date">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="company_id" class="col-sm-2 control-label">To Date</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" id="to_date" placeholder="To Date">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
