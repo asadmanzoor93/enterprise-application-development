@@ -1,1 +1,1 @@
-# Ead_Project
+# Enterprise Application Development Project
